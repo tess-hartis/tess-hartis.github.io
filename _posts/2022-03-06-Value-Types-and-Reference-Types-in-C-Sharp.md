@@ -24,13 +24,13 @@ Common value types include:
 
 -   All numeric types and floating-point types
 
-    -   Bool (because the underlying value is 1 or 0)
+-   Bool (because the underlying value is 1 or 0)
 
-    -   Char (because the underlying value is a Unicode character)
+-   Char (because the underlying value is a Unicode character)
 
-    -   Date
+-   Date
 
-    -   All structs, including record structs
+-   All structs, including record structs
 
  
 
@@ -53,13 +53,13 @@ Common reference types include:
 
 -   String
 
-    -   Class
+-   Class
 
-    -   Array
+-   Array
 
-    -   Delegate
+-   Delegate
 
-    -   Record
+-   Record
 
      
 
