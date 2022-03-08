@@ -124,7 +124,7 @@ dynamic in size. If more memory is needed, memory from the operating system can
 be allocated. Reference types are always stored on the heap. Value types are
 either stored on the stack or the heap, depending on how they are created.
 
-![](../images/smaller.jpg)
+![](../Downloads/smaller.jpg)
 
 Looking at the stack above, notice that “int x” and “int y” are both separate
 instances of the number 5 and store the value directly. However, the variable
@@ -194,6 +194,8 @@ strings in two ways:
     objects are reference types, the .Equals method compares that the references
     are the same. It is the same as using the == operator, which calls the
     ReferenceEquals method.
+
+ 
 
 String immutability
 -------------------
