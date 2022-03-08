@@ -1,7 +1,7 @@
 In C\#, variables can be categorized into two types - value types and reference
 types. The differences concern how a variable stores and accesses its data. This
 post will examine these differences as well as their implications for each
-type’s behavior. This is by no means an exhaustive explaination, but rather a
+type’s behavior. This is by no means an exhaustive explanation, but rather a
 collection of my own notes that I hope others find useful. Corrections are
 welcomed and encouraged.
 
@@ -85,7 +85,7 @@ Three variables are declared -- `toto1`, `toto2`, and `toto3`. The variable
 toto1 creates a new instance of the dog class. The variable name, `toto1`, is
 stored on a part of the memory called the stack (explained further below),
 however, the new dog object is not directly stored with the variable. The
-variable is stored only with a** **reference to the dog object, which is stored
+variable is stored only with a reference to the dog object, which is stored
 on a part of the memory called the heap. As stated above, when using reference
 types, multiple variables can all reference the same object because they are all
 referencing the same single object at a specific location in memory. Therefore,
@@ -130,7 +130,7 @@ instances of the number 5 and store the value directly. However, the variable
 `Dog x` does not store all of the data related to the dog object. Assuming that
 `Dog` is a class, it is considered a reference type. Its variable is stored on
 the stack with only a reference to the rest of the data. This reference, or
-"address," is a hexadecimal refering to the specific location on heap memory
+"address," is a hexadecimal referring to the specific location on heap memory
 where the object's data is stored. The hexadecimal really contains no useful
 information to the user, but the CLR uses it to determine exactly which object
 is being referred to. Reference types are always allocated on heap memory, while
