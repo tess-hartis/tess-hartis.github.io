@@ -179,7 +179,7 @@ string x = "puppy dog";
 string y = "puppy dog";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Because of string interning, an equality check on string x and string y would
+Because of string interning, an equality check on `string x` and `string y` would
 return true because they both share a reference to the same literal string in
 memory. Equality check is a value type behavior that is able to be performed on
 strings in two ways:
@@ -188,11 +188,11 @@ strings in two ways:
     This method checks that the underlying reference, or “address,” or the two
     strings are the same.
 
--   By using the .Equals method. In this method, the type of comparison depends
+-   By using the `.Equals` method. In this method, the type of comparison depends
     on if the objects being compared are reference types or value types. If the
     objects are reference types, the` .Equals` method compares that the
     references are the same. It is the same as using the == operator, which
-    calls the ReferenceEquals method.
+    calls the `ReferenceEquals` method.
 
  
 
