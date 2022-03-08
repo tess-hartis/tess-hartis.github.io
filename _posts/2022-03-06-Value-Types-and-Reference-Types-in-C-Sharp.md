@@ -5,6 +5,8 @@ type’s behavior. This is by no means an exhaustive explaination, but rather a
 collection of my own notes that I hope others find useful. Corrections are
 welcomed and encouraged.
 
+ 
+
 The simple differences
 ----------------------
 
@@ -45,8 +47,6 @@ It means that whatever value is stored by the variable *x* is now also stored by
 the variable *y*. Any number of variables could also store the number 5, but
 each one of those would be a separate instance of the number 5.
 
- 
-
 ### Reference Types
 
 Common reference types include:
@@ -60,6 +60,8 @@ Common reference types include:
     -   Delegate
 
     -   Record
+
+     
 
 Example of reference type behavior:
 
@@ -135,8 +137,6 @@ no useful information to the user, but the CLR uses it to determine exactly
 which object is being referred to. Reference types are *always* allocated on
 heap memory, while value types can be stored on either the stack or the heap.
 
- 
-
 ### Examples of value types being stored on heap memory:
 
 -   If a value type is declared as part of an object, it will always be stored
@@ -150,8 +150,6 @@ heap memory, while value types can be stored on either the stack or the heap.
     the scenes. This method takes objects as the argument, so when a value type
     is passed in, the value is first boxed and stored on the heap. In this case,
     the value type is being treated like a reference type.
-
- 
 
 Value types can be accessed like reference types by using the keyword “ref.”
 Instead of the value being copied to a new instance, as in the first example,
