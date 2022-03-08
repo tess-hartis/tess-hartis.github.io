@@ -150,7 +150,7 @@ value types can be stored on either the stack or the heap.
     is passed in, the value is first boxed and stored on the heap. In this case,
     the value type is being treated like a reference type.
 
-Value types can be accessed like reference types by using the keyword `ref.`
+Value types can be accessed like reference types by using the keyword `ref`.
 Instead of the value being copied to a new instance, as in the first example,
 the code using the value receives a reference “address” to the data, whether it
 is on the heap or on the stack.
