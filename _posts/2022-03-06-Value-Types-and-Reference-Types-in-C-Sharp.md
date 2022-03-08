@@ -124,7 +124,7 @@ dynamic in size. If more memory is needed, memory from the operating system can
 be allocated. Reference types are always stored on the heap. Value types are
 either stored on the stack or the heap, depending on how they are created.
 
-![](../Downloads/smaller.jpg)
+![](../images/smaller.jpg)
 
 Looking at the stack above, notice that “int x” and “int y” are both separate
 instances of the number 5 and store the value directly. However, the variable
