@@ -185,7 +185,7 @@ memory. Equality check is a value type behavior that is able to be performed on
 strings in two ways:
 
 -   By using the == operator, which resolves to `System.Object.ReferenceEquals`.
-    This method checks that the underlying reference, or “address,” or the two
+    This method checks that the underlying reference, or “address,” of the two
     strings are the same.
 
 -   By using the `.Equals` method. In this method, the type of comparison depends
