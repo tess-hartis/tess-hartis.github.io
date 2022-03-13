@@ -269,7 +269,7 @@ their will.
 A common misconception about dependency inversion is that it is the same thing
 as dependency injection. Dependency inversion is a guideline about **what
 kinds** of objects other objects should depend on (concrete or abstract) and
-which classes should be dependency on other classes. Dependency injection is
+which classes should be dependent on other classes. Dependency injection is
 about **how** those objects are supplied with their dependencies.
 
 ### Why use DI or follow the DIP?
