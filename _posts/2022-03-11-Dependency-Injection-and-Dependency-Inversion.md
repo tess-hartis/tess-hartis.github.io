@@ -15,7 +15,7 @@ be used as a dependency.
 ### Instantiated within a class (not dependency injection):
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ csharp
-public class Veteranarian
+public class Veterinarian
 {
     public void GiveRabiesVaccine()
     {
@@ -30,7 +30,7 @@ public class Veteranarian
 
 public class DogPatient
 {
-    private Veteranarian _vet = new Veteranarian;
+    private Veterinarian _vet = new Veterinarian();
 
     public void GetVaccines()
     {
@@ -42,8 +42,8 @@ public class DogPatient
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The example above defines the class `DogPatient`, which depends on the class
-`Veteranarian`. The dependency object is created within the class by saying `new
-Veteranarian`. This is also called "newing up" the dependency. In this case, the
+`Veterinarian`. The dependency object is created within the class by saying `new
+Veterinarian`. This is also called "newing up" the dependency. In this case, the
 object is directly creating its dependency. This is not an example of dependency
 injection. Dependency injection is just a fancy way of saying that something
 else is going to provide the object its dependency when, and only when, it is
