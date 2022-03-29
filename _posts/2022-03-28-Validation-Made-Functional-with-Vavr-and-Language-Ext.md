@@ -118,7 +118,7 @@ matching, but this post is keeping it simple. By convention, the invalid state
 is always on the left side, and the valid state is on the right side.
 
 Assume similar methods were created for the `DogBreed` and `DogAge` properties.
-The example below is a POST method from a REST API controller using the Spring
+The example below is a POST endpoint from a REST API controller using the Spring
 web framework.
 
 Combining validations into one:
@@ -156,27 +156,8 @@ that no exceptions are thrown, and all of the errors are collected without
 stopping the flow of the code.
 
 The final step is accessing the result, which is wrapped inside a validation,
-and then defining appropriate behavior for each case. A simple, yet highly
-verbose, way of doing this could be with an if-statement:
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var result = Validation.combine(name, breed, dog).ap(Dog::of)
-
-if(result.isValid()){
-    result.map(sessionRepository::saveAndFlush);
-    return new ResponseEntity<>(HttpStatus.CREATED);
-}
-
-else {
-    result.mapError(Value::toJavaList);
-    return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
- 
-
-Another way of checking the results is to use pattern matching. An issue with
-this method is that the success and error cases are mapped twice: once in the
+and then defining appropriate behavior for each case. One way of checking the results is to use pattern matching. An issue with
+this method in this case is that the success and error cases are mapped twice: once in the
 `result` variable and once in the return statement via the lambda expressions:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -192,13 +173,12 @@ return Match(result).of(
 	  new ResponseEntity<>(e,HttpStatus.BAD_REQUEST)));
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- 
 
 A more concise way of achieving the same result without the redundancy is to
-utilize the `.fold()` method. Using fold allows us to map both the invalid and
-valid cases onto a `ResponseEntity` all in one short statement. Although not
+utilize the `.fold()` method. Using `fold` allows us to map both the invalid and
+valid cases onto the appropriate `ResponseEntity` all in one short statement. Although not
 shown below, this method could be condensed even further if
-`Validation.combine()` and `.ap()` were extracted to a command:
+`Validation.combine()` and `.ap()` were extracted to a command.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 return Validation.combine(name, description, length)
@@ -274,7 +254,7 @@ public async Task<Validation<Error, Dog>> Handle(CreateDogCommand command, Cance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There is lots to unpack in the example above, since it is a command and also an
-async method. However, under the extraneous details, it functions like Vavr. The
+async method. However, under those extraneous details, it functions like Vavr. The
 validations are collected and processed using the `.Apply` method. Like `.ap()`,
 this method unwraps the validations, then returns a separate wrapped validation
 result. If any of the previous validations are a `Fail`, the resulting
@@ -285,7 +265,7 @@ the dog repository. `Ignore` signals that anything other than the successful
 case (the dog object) should be ignored. The method returns a validation object
 of **either** an error or dog.
 
-The last example handles the validation result within a POST method using
+The last example handles the validation result within a POST endpoint using
 ASP.NET:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
