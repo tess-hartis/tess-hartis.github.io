@@ -6,18 +6,21 @@ used) "torrential exceptions":
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 public static DogName of(string name){
 
-	if(name.isEmpty())
-    		throw new IllegalArgumentException("name cannot be empty");
+    if(name.isEmpty())
+    	throw new IllegalArgumentException
+    	("name cannot be empty");
 
-	if(name.length() > 50)
-		throw new IllegalArgumentException("name too long");
+    if(name.length() > 50)
+	throw new IllegalArgumentException
+	("name too long");
 
-	if(!name.isValid)
-		throw new Illegal ArgumentException("invalid for another reason");
+    if(!name.isValid)
+	throw new Illegal ArgumentException
+	("invalid for another reason");
 
-	//other checks omitted for brevity
+    //other checks omitted for brevity
 
-	return new DogName.of(name);
+    return new DogName.of(name);
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -87,14 +90,14 @@ import io.vavr.control.Validation.invalid;
 
 public class DogName{
 
-	public String value;
+    public String value;
 
-	private DogName(string value){
+    private DogName(string value){
 
-		this.value = value;
-	}
+        this.value = value;
+    }
 
-	public static Validation<String, DogName> validate(String name){
+    public static Validation<String, DogName> validate(String name){
 
         if (name.isEmpty())
                 return invalid("name cannot be empty");
@@ -184,9 +187,10 @@ var result = Validation.combine(name, breed, dog)
 		        .mapError(Value::toJavaList);
 
 return Match(result).of(
-    Case($Valid($()),() -> new ResponseEntity<>(HttpStatus.CREATED)),
+    Case($Valid($()),() ->
+          new ResponseEntity<>(HttpStatus.CREATED)),
     Case($Invalid($()), e ->
-			    new ResponseEntity<>(e,HttpStatus.BAD_REQUEST)));
+	  new ResponseEntity<>(e,HttpStatus.BAD_REQUEST)));
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  
