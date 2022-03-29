@@ -71,7 +71,6 @@ curve:
 -   The errors can be collected and returned to the user as one object, instead
     of one-by-one exceptions
 
- 
 
 Implementation Examples
 =======================
@@ -208,7 +207,6 @@ return Validation.combine(name, description, length)
               c -> ok(sessionRepository.saveAndFlush(c)));
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- 
 
 **2. LanguageExt**
 --------------
