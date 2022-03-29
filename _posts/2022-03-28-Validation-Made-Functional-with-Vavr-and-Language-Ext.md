@@ -138,9 +138,10 @@ public ResponseEntity create(@RequestBody PostDogDto dto) {
     var breed = DogBreed.validate(dto.dog_breed);
     var age = DogAge.validate(dto.dog_age);
 
-    return Validation.combine(name, breed, dog).ap(Dog::of)
+    var result = Validation.combine(name, breed, dog)
+                    .ap(Dog::of);
 
-//then do something to access the result
+//then do something to access the result and return the correct Response Entity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The `name`, `breed`, and `age` variables return wrapped validations. The power
