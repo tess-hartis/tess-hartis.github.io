@@ -138,8 +138,7 @@ public ResponseEntity create(@RequestBody PostDogDto dto) {
     var breed = DogBreed.validate(dto.dog_breed);
     var age = DogAge.validate(dto.dog_age);
 
-    return Validation.combine(name, breed, dog)
-            .ap(Dog::of)
+    return Validation.combine(name, breed, dog).ap(Dog::of)
 
 //then do something to access the result
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
