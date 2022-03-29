@@ -291,7 +291,7 @@ it achieves the same result.
 Conclusion
 ==========
 
-Vavr and LanguageExt provide powerful fuctional tools for object-oriented
+Vavr and LanguageExt provide powerful functional tools for object-oriented
 programming. The validation APIs enable methods or objects to exist in more than
 one state - valid or invalid - eliminating the need for handling validation via
 exceptions. This allows for cleaner and more concise code. Greatest of all, the
