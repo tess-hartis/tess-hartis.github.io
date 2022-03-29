@@ -295,7 +295,7 @@ ASP.NET:
 [HttpPost]
 public async Task<IActionResult> PostDog([FromBody] CreateDogCommand request)
 {
- var dog = await _mediator.Send(request);
+    var dog = await _mediator.Send(request);
     return dog.Match<IActionResult>(
         d => Ok(),
         e =>
