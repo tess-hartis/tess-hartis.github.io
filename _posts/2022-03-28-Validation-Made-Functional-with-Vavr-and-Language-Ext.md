@@ -225,7 +225,6 @@ using LanguageExt.Common;
 
 public record DogName
 {
-
     public readonly string Value;
 
     private DogName(string value)
